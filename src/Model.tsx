@@ -1,10 +1,11 @@
 import { useFBX } from "@react-three/drei";
+import * as SkeletonUtils from "three/addons/utils/SkeletonUtils.js";
 import { useFrame } from "@react-three/fiber";
 
 const Model = () => {
   const fbx = useFBX("/1.fbx");
-  const fbx2 = useFBX("/2.fbx");
-  const fbx3 = useFBX("/3.fbx");
+  const fbx2 = SkeletonUtils.clone(fbx);
+  const fbx3 = SkeletonUtils.clone(fbx);
 
   useFrame(() => {
     // Rotate the model for a simple animation
